@@ -1,0 +1,96 @@
+---
+const navLinks = [
+  { name: 'Services', href: '#services' },
+  { name: 'Credentials', href: '#credentials' },
+  { name: 'Why Me', href: '#why-me' },
+  { name: 'Contact', href: 'mailto:ritjiishaku@gmail.com' },
+];
+---
+
+<nav 
+  id="main-nav" 
+  class="fixed top-0 w-full z-[1000] transition-all duration-300 px-5 md:px-8 py-4 flex items-center justify-between"
+  aria-label="Main navigation"
+>
+  <div class="flex flex-col">
+    <a href="/" class="text-[18px] font-bold text-white font-display leading-tight">Ritji Ishaku</a>
+    <span class="text-[9px] uppercase tracking-[0.12em] text-white/40 font-body">Clinical AI Automation Specialist</span>
+  </div>
+
+  <!-- Desktop Nav -->
+  <div class="hidden md:flex items-center gap-8">
+    <div class="flex gap-8">
+      {navLinks.map(link => (
+        <a href={link.href} class="text-[13px] text-white hover:text-blue transition-colors font-body">{link.name}</a>
+      ))}
+    </div>
+    <button data-calendly-trigger class="btn-primary !text-[12px] !py-2 !px-5 !min-h-[38px] rounded-full">Book a Call</button>
+  </div>
+
+  <!-- Mobile Toggle -->
+  <button
+    data-menu-toggle
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+    class="md:hidden text-white p-2"
+  >
+    <img src="/icons/icon-hamburger.svg" alt="" class="w-6 h-6" />
+  </button>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="mobile-menu md:hidden">
+    <button
+      data-menu-close
+      aria-label="Close menu"
+      class="absolute top-6 right-5 text-white p-2"
+    >
+      <img src="/icons/icon-close.svg" alt="" class="w-6 h-6" />
+    </button>
+    
+    <div class="flex flex-col items-center">
+      {navLinks.map(link => (
+        <a href={link.href}>{link.name}</a>
+      ))}
+      <button data-calendly-trigger class="btn-primary mt-6">Book a Call</button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const hamburger = document.querySelector('[data-menu-toggle]');
+  const menu = document.getElementById('mobile-menu');
+  const closeBtn = document.querySelector('[data-menu-close]');
+  const menuLinks = menu?.querySelectorAll('a');
+
+  // Scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav?.classList.add('bg-navy', 'shadow-md', 'py-3');
+      nav?.classList.remove('py-4');
+    } else {
+      nav?.classList.remove('bg-navy', 'shadow-md', 'py-3');
+      nav?.classList.add('py-4');
+    }
+  });
+
+  // Mobile menu toggle
+  hamburger?.addEventListener('click', () => {
+    menu?.classList.add('is-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  });
+
+  const closeMenu = () => {
+    menu?.classList.remove('is-open');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  closeBtn?.addEventListener('click', closeMenu);
+
+  menuLinks?.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

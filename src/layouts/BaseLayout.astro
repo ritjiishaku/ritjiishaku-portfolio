@@ -1,0 +1,135 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+  title = "Ritji Ishaku | Clinical AI Automation Specialist",
+  description = "I help health and wellness businesses save time and serve more patients through AI automations and intelligent digital systems — built by a certified AI engineer who has also worked in clinical care."
+} = Astro.props;
+
+const siteUrl = "https://ritjiishaku.com";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#0A2540" />
+
+		<!-- Favicons -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/favicon.svg" />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+		
+		<!-- Calendly Popup Widget -->
+		<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+		<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+		
+		<!-- Font Preload -->
+		<link rel="preload" as="font" href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD7K_hy9Lxsvf96S2nt73Y9yHToqKOXmxKS_T.woff2" type="font/woff2" crossorigin>
+		<link rel="preload" as="font" href="https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywOTTSmF7S7XqCMbUB.woff2" type="font/woff2" crossorigin>
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="clinical AI automation specialist, health tech Nigeria, AI automation engineer, WhatsApp chatbot clinic, patient intake automation, health workflow automation, telehealth AI, n8n health automation, LangChain health, AI agent healthcare, medical AI automation Nigeria" />
+		<meta name="author" content="Ritji Ishaku" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={siteUrl} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={siteUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={`${siteUrl}/og/og-social-preview.png`} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="en_NG" />
+		<meta property="og:site_name" content="Ritji Ishaku" />
+
+		<!-- Twitter/X Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content="AI automations for health and wellness businesses. Built by a certified AI engineer and registered nurse." />
+		<meta name="twitter:image" content={`${siteUrl}/og/og-social-preview.png`} />
+
+		<!-- Schema.org Structured Data -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Person",
+		  "name": "Ritji Ishaku",
+		  "jobTitle": "Clinical AI Automation Specialist",
+		  "description": "Certified AI Automation Engineer and Registered Nurse helping health and wellness businesses build intelligent digital systems using LLMs, AI agents, and workflow automations.",
+		  "url": "https://ritjiishaku.com",
+		  "sameAs": [
+			"https://linkedin.com/in/ritjiishaku"
+		  ],
+		  "knowsAbout": [
+			"AI Automation Engineering",
+			"Large Language Models",
+			"AI Agents",
+			"Retrieval-Augmented Generation",
+			"n8n Workflow Automation",
+			"LangChain",
+			"CrewAI",
+			"LangGraph",
+			"WhatsApp Business API",
+			"Multi-Agent Systems",
+			"Health Technology",
+			"Clinical Nursing",
+			"UX Design",
+			"MVP Development",
+			"Patient Intake Automation",
+			"Healthcare Workflow Design"
+		  ],
+		  "hasCredential": [
+			{
+			  "@type": "EducationalOccupationalCredential",
+			  "name": "AI Automation Engineer — Build LLM Apps and AI Agents",
+			  "description": "8-week intensive certification covering LLMs, AI agents, RAG systems, n8n, LangChain, CrewAI, multi-agent systems, and production deployment."
+			}
+		  ],
+		  "areaServed": "Worldwide",
+		  "availableLanguage": "English",
+		  "nationality": "Nigerian"
+		}
+		</script>
+	</head>
+	<body>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+		<slot />
+		
+		<script>
+			// Scroll reveal JS
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+					}
+				});
+			}, { threshold: 0.1 });
+
+			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+			// Calendly Popup Trigger
+			document.addEventListener('click', (e) => {
+				const trigger = e.target.closest('[data-calendly-trigger]');
+				if (trigger) {
+					e.preventDefault();
+					// @ts-ignore
+					Calendly.initPopupWidget({ url: 'https://calendly.com/ritjiishaku' });
+				}
+			});
+		</script>
+	</body>
+</html>

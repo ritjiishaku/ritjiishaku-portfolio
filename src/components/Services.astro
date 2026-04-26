@@ -1,0 +1,46 @@
+---
+const services = [
+  {
+    icon: "/icons/icon-whatsapp-chatbot.svg",
+    title: "AI WhatsApp Chatbots",
+    body: "Answers patient questions 24/7. Books appointments. Sends reminders. Your staff rest. Patients are always served."
+  },
+  {
+    icon: "/icons/icon-workflow-automation.svg",
+    title: "Workflow Automations",
+    body: "Patient intake, follow-up sequences, and appointment reminders — running automatically with zero manual effort from your team."
+  },
+  {
+    icon: "/icons/icon-mvp-build.svg",
+    title: "MVP Builds",
+    body: "For health startups ready to build their first digital product. From idea to working system — fast, clinical, and user-tested."
+  }
+];
+---
+
+<section id="services" class="bg-navy py-[48px] md:py-[80px] px-5 md:px-0 text-white">
+  <div class="max-w-container mx-auto">
+    <div class="reveal">
+      <div class="text-[11px] font-medium uppercase tracking-[0.14em] text-blue mb-4 font-body">What I Build</div>
+      <h2 class="text-[26px] md:text-[38px] font-bold mb-3 font-display leading-[1.2]">
+        AI systems designed for how<br class="hidden md:block" /> 
+        health businesses actually work.
+      </h2>
+      <p class="text-[14px] text-white/60 mb-12 font-body">
+        Built by someone who has worked inside them.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+      {services.map((service, index) => (
+        <div class={`reveal reveal-delay-${index + 1} bg-white/5 border-t-2 border-blue rounded-[12px] p-5 flex flex-col`}>
+          <div class="mb-3 text-blue">
+            <img src={service.icon} alt="" class="w-6 h-6" />
+          </div>
+          <h3 class="text-[14px] font-medium text-white mb-2 font-body">{service.title}</h3>
+          <p class="text-[12px] text-white/60 leading-[1.6] font-body">{service.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
