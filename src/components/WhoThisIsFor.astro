@@ -1,0 +1,75 @@
+---
+const forWho = [
+  {
+    icon: "/icons/icon-clinic.svg",
+    title: "Private Clinics & Practices",
+    points: [
+      "Struggling with missed appointments and manual booking",
+      "Running patient communication through WhatsApp",
+      "Need 24/7 patient support without hiring more staff",
+      "Want to reduce admin work so nurses focus on care"
+    ]
+  },
+  {
+    icon: "/icons/icon-startup.svg",
+    title: "Health Startups & Founders",
+    points: [
+      "Building their first digital health product or MVP",
+      "Need someone who understands clinical workflows",
+      "Want to automate patient onboarding and follow-ups",
+      "Looking for fast, user-tested system builds"
+    ]
+  }
+];
+
+const notFor = [
+  "Large hospital systems with complex IT departments",
+  "Businesses outside healthcare looking for general automation",
+  "Projects that require on-site presence (I work remotely)",
+  "Anyone looking for a quick, low-quality template fix"
+];
+---
+<section id="who-this-is-for" class="bg-[#F7F9FC] py-[48px] md:py-[80px] px-5 md:px-0">
+  <div class="max-w-container mx-auto">
+    <div class="reveal mb-12">
+      <div class="text-[11px] font-medium uppercase tracking-[0.14em] text-blue mb-4 font-body">Who This Is For</div>
+      <h2 class="text-[26px] md:text-[38px] font-bold font-display leading-[1.2]">
+        Built for clinics and health<br class="hidden md:block" />
+        startups that need results fast.
+      </h2>
+    </div>
+
+    <!-- Who This Is For -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-8 md:mb-12">
+      {forWho.map((group, index) => (
+        <div class={`reveal reveal-delay-${index + 1} bg-white border border-[#E2E8F0] rounded-[12px] p-5 md:p-6`}>
+          <div class="mb-3 text-blue">
+            <img src={group.icon} alt="" class="w-6 h-6" />
+          </div>
+          <h3 class="text-[14px] font-medium text-navy mb-3 font-body">{group.title}</h3>
+          <ul class="space-y-2">
+            {group.points.map((point) => (
+              <li class="flex items-start gap-2 text-[12px] text-muted leading-[1.6] font-body">
+                <span class="text-green mt-0.5 flex-shrink-0">✓</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Who It's Not For -->
+    <div class="reveal bg-navy/5 border border-navy/10 rounded-[12px] p-5 md:p-6">
+      <div class="text-[11px] font-medium uppercase tracking-[0.14em] text-red-soft mb-3 font-body">Who It's Not For</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        {notFor.map((item) => (
+          <div class="flex items-start gap-2 text-[12px] text-muted leading-[1.6] font-body">
+            <span class="text-red-soft/60 mt-0.5 flex-shrink-0">✕</span>
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
