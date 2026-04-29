@@ -3,17 +3,17 @@ const services = [
   {
     icon: "/icons/icon-whatsapp-chatbot.svg",
     title: "AI WhatsApp Chatbots",
-    body: "Answers patient questions 24/7. Books appointments. Sends reminders. Your staff rest. Patients are always served."
+    body: "Answers patient questions 24/7. Books appointments. Sends reminders. Your staff focus on care. Patients are never left waiting."
   },
   {
     icon: "/icons/icon-workflow-automation.svg",
     title: "Workflow Automations",
-    body: "Patient intake, follow-up sequences, and appointment reminders — running automatically with zero manual effort from your team."
+    body: "Patient intake, follow-up sequences, and appointment reminders — running while your team focuses on patients, not paperwork."
   },
   {
     icon: "/icons/icon-mvp-build.svg",
     title: "MVP Builds",
-    body: "For health startups ready to build their first digital product. From idea to working system — fast, clinical, and user-tested."
+    body: "You have the idea. You know the problem you are solving. You just need someone who can build it correctly the first time — clinically sound, user-tested, and fast."
   }
 ];
 ---
@@ -31,9 +31,9 @@ const services = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
       {services.map((service, index) => (
-        <div class={`reveal reveal-delay-${index + 1} bg-white/5 border-t-2 border-blue rounded-[12px] p-5 flex flex-col`}>
+        <div class={`reveal reveal-delay-${index + 1} bg-white/5 border-t-2 border-blue rounded-[12px] p-5 flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg`}>
           <div class="mb-3 text-blue">
             <img src={service.icon} alt="" class="w-6 h-6" />
           </div>

@@ -30,10 +30,6 @@ const siteUrl = "https://ritjiishaku.com";
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 		
-		<!-- Calendly Popup Widget -->
-		<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-		<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-		
 		<!-- Font Preload -->
 		<link rel="preload" as="font" href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD7K_hy9Lxsvf96S2nt73Y9yHToqKOXmxKS_T.woff2" type="font/woff2" crossorigin>
 		<link rel="preload" as="font" href="https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywOTTSmF7S7XqCMbUB.woff2" type="font/woff2" crossorigin>
@@ -120,16 +116,6 @@ const siteUrl = "https://ritjiishaku.com";
 			}, { threshold: 0.1 });
 
 			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-			// Calendly Popup Trigger
-			document.addEventListener('click', (e) => {
-				const trigger = e.target.closest('[data-calendly-trigger]');
-				if (trigger) {
-					e.preventDefault();
-					// @ts-ignore
-					Calendly.initPopupWidget({ url: 'https://calendly.com/ritjiishaku' });
-				}
-			});
 		</script>
 	</body>
 </html>

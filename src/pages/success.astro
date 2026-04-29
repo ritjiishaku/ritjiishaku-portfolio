@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <main
+    id="main-content"
+    style="min-height: 80vh; display: flex; align-items: center;
+           justify-content: center; padding: 80px 20px;
+           background: #F7F9FC;"
+  >
+    <div style="text-align: center; max-width: 560px;">
+
+      <div style="width: 64px; height: 64px; background: rgba(29,158,117,0.1);
+                  border-radius: 50%; display: flex; align-items: center;
+                  justify-content: center; margin: 0 auto 24px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+             stroke="#1D9E75" stroke-width="2.5" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <h1 style="font-family: 'Playfair Display', Georgia, serif;
+                 font-size: 32px; font-weight: 700; color: #0A2540;
+                 line-height: 1.2; margin-bottom: 16px;">
+        Message received.
+      </h1>
+
+      <p style="font-family: 'DM Sans', Helvetica Neue, Arial, sans-serif;
+                font-size: 16px; color: #64748B; line-height: 1.7;
+                margin-bottom: 32px;">
+        Thank you for reaching out. I will review your message
+        and WhatsApp or email you within 24 hours to schedule
+        your free 20-minute call.
+      </p>
+
+      
+        href="/"
+        style="display: inline-flex; align-items: center; gap: 8px;
+               font-family: 'DM Sans', Helvetica Neue, Arial, sans-serif;
+               font-size: 14px; font-weight: 500; color: #388BFD;
+               text-decoration: none; letter-spacing: 0.02em;"
+      >
+        ← Back to homepage
+      </a>
+
+    </div>
+  </main>
+</BaseLayout>

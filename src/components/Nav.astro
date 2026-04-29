@@ -3,7 +3,6 @@ const navLinks = [
   { name: 'Services', href: '#services' },
   { name: 'Credentials', href: '#credentials' },
   { name: 'Why Me', href: '#why-me' },
-  { name: 'Contact', href: 'mailto:ritjiishaku@gmail.com' },
 ];
 ---
 
@@ -24,7 +23,7 @@ const navLinks = [
         <a href={link.href} class="text-[13px] text-white hover:text-blue transition-colors font-body">{link.name}</a>
       ))}
     </div>
-    <button data-calendly-trigger class="btn-primary !text-[12px] !py-2 !px-5 !min-h-[38px] rounded-full">Book a Call</button>
+    <a href="#contact" class="btn-nav-cta" aria-label="Go to contact form">Book a Call</a>
   </div>
 
   <!-- Mobile Toggle -->
@@ -50,9 +49,9 @@ const navLinks = [
     
     <div class="flex flex-col items-center">
       {navLinks.map(link => (
-        <a href={link.href}>{link.name}</a>
+        <a href={link.href} class="mobile-link">{link.name}</a>
       ))}
-      <button data-calendly-trigger class="btn-primary mt-6 w-full justify-center whitespace-nowrap">Book a Call</button>
+      <a href="#contact" class="btn-nav-cta mt-6 w-full justify-center whitespace-nowrap mobile-link">Book a Call</a>
     </div>
   </div>
 </nav>
@@ -62,15 +61,28 @@ const navLinks = [
   const hamburger = document.querySelector('[data-menu-toggle]');
   const menu = document.getElementById('mobile-menu');
   const closeBtn = document.querySelector('[data-menu-close]');
-  const menuLinks = menu?.querySelectorAll('a');
+  const menuLinks = menu?.querySelectorAll('.mobile-link');
+
+  const closeMenu = () => {
+    menu?.classList.remove('is-open');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  // Close mobile menu when any mobile link is clicked
+  menuLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
 
   // Scroll effect
   window.addEventListener('scroll', () => {
     if (window.scrollY > 60) {
-      nav?.classList.add('bg-navy', 'shadow-md', 'py-3');
+      nav?.classList.add('backdrop-blur-md', 'bg-navy/80', 'shadow-md', 'py-3');
       nav?.classList.remove('py-4');
     } else {
-      nav?.classList.remove('bg-navy', 'shadow-md', 'py-3');
+      nav?.classList.remove('backdrop-blur-md', 'bg-navy/80', 'shadow-md', 'py-3');
       nav?.classList.add('py-4');
     }
   });
@@ -81,12 +93,6 @@ const navLinks = [
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   });
-
-  const closeMenu = () => {
-    menu?.classList.remove('is-open');
-    hamburger?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
 
   closeBtn?.addEventListener('click', closeMenu);
 

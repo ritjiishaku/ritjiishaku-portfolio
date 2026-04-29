@@ -53,13 +53,16 @@
   --shadow-lg: 0 8px 32px rgba(10,37,64,0.12);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Base Styles */
 body {
   font-family: var(--font-body);
   color: var(--color-text-primary);
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3 {
@@ -81,10 +84,11 @@ h1, h2, h3 {
   max-width: 540px;
 }
 
-/* Buttons */
+/* Primary Button - Used in Hero, CTA */
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: #388BFD;
   color: #FFFFFF;
@@ -100,15 +104,18 @@ h1, h2, h3 {
   text-decoration: none;
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
+
 .btn-primary:hover {
   background: #2176e8;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(56,139,253,0.35);
 }
+
 .btn-primary:active {
   transform: translateY(0);
   box-shadow: none;
 }
+
 .btn-primary:focus-visible {
   outline: 3px solid #B5D4F4;
   outline-offset: 2px;
@@ -122,6 +129,43 @@ h1, h2, h3 {
     font-size: 13px;
     padding: 14px 20px;
   }
+}
+
+/* Nav CTA button */
+.btn-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #388BFD;
+  color: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  min-height: 38px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-nav-cta:hover {
+  background: #2176e8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(56,139,253,0.35);
+}
+
+.btn-nav-cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-nav-cta:focus-visible {
+  outline: 3px solid #B5D4F4;
+  outline-offset: 2px;
 }
 
 /* Chips */
@@ -165,7 +209,9 @@ h1, h2, h3 {
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background: #0A2540;
+  background: rgba(10, 37, 64, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   z-index: 999;
   display: flex;
   flex-direction: column;
@@ -178,13 +224,28 @@ h1, h2, h3 {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
+/* Mobile Menu Nav Button - inherits from .btn-nav-cta */
+.mobile-menu .btn-nav-cta {
+  margin-top: 32px;
+  width: calc(100% - 48px);
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.mobile-menu.is-open .btn-nav-cta {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.25s;
+}
+
 .mobile-menu.is-open {
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
 }
 
-.mobile-menu a {
+.mobile-link {
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -199,12 +260,12 @@ h1, h2, h3 {
   align-items: center;
 }
 
-.mobile-menu.is-open a:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.05s; }
-.mobile-menu.is-open a:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.10s; }
-.mobile-menu.is-open a:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
-.mobile-menu.is-open a:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.20s; }
+.mobile-menu.is-open .mobile-link:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.05s; }
+.mobile-menu.is-open .mobile-link:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.10s; }
+.mobile-menu.is-open .mobile-link:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+.mobile-menu.is-open .mobile-link:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.20s; }
 
-.mobile-menu .btn-primary {
+.mobile-menu .btn-nav-cta {
   margin-top: 24px;
   width: calc(100% - 40px);
   justify-content: center;
@@ -212,7 +273,7 @@ h1, h2, h3 {
   transform: translateY(8px);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
-.mobile-menu.is-open .btn-primary {
+.mobile-menu.is-open .btn-nav-cta {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.25s;

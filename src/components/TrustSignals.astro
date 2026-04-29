@@ -2,11 +2,15 @@
 const stats = [
   {
     number: "5+",
-    label: "Years of active clinical nursing practice"
+    label: "Years inside clinical environments — as a practising nurse"
+  },
+  {
+    number: "8",
+    label: "Weeks of intensive, hands-on AI automation engineering training"
   },
   {
     number: "4",
-    label: "Real-world AI automation projects built and deployed"
+    label: "AI systems built, tested, and delivered to real-world clients"
   }
 ];
 ---
@@ -17,7 +21,7 @@ const stats = [
       <div class="text-[11px] font-medium uppercase tracking-[0.14em] text-blue mb-4 font-body">By the Numbers</div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
       {stats.map((stat, index) => (
         <div class={`reveal reveal-delay-${index + 1} bg-white border border-[#E2E8F0] rounded-[12px] shadow-sm p-7 md:p-8 text-center`}>
           <div class="text-[48px] font-bold text-blue font-display leading-none mb-2">{stat.number}</div>

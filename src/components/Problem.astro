@@ -10,7 +10,7 @@ const painPoints = [
   },
   {
     title: "Follow-ups done manually",
-    body: "When staff remember. Most patients never hear from you again after one visit."
+    body: "When staff remember. Which isn't always. Most patients never hear from you again after their first visit."
   },
   {
     title: "No data. No insight.",
@@ -22,7 +22,7 @@ const painPoints = [
 <section class="bg-[#F7F9FC] py-[48px] md:py-[80px] px-5 md:px-0">
   <div class="max-w-container mx-auto">
     <div class="reveal">
-      <div class="text-[11px] font-medium uppercase tracking-[0.14em] text-blue mb-4 font-body">The Problem</div>
+      <div class="text-[11px] font-medium uppercase tracking-[0.14em] text-blue mb-4 font-body">Does This Sound Familiar?</div>
       <h2 class="text-[26px] md:text-[38px] font-bold text-navy mb-6 font-display leading-[1.2]">
         Right now, your clinic probably<br class="hidden md:block" /> 
         looks something like this.
@@ -33,9 +33,9 @@ const painPoints = [
       </p>
     </div>
 
-    <div class="grid grid-cols-2 gap-3 md:gap-4">
+    <div class="grid grid-cols-2 gap-4 md:gap-6">
       {painPoints.map((point, index) => (
-        <div class={`reveal reveal-delay-${(index % 3) + 1} bg-white border-l-[3px] border-red-soft rounded-r-[12px] shadow-sm p-4 md:p-5 flex flex-col justify-center`}>
+        <div class={`reveal reveal-delay-${(index % 3) + 1} bg-white border-l-[3px] border-red-soft rounded-r-[12px] shadow-sm p-4 md:p-5 flex flex-col justify-center hover:shadow-md transition-shadow duration-200`}>
           <h3 class="text-[13px] font-medium text-navy mb-1.5 font-body">{point.title}</h3>
           <p class="text-[12px] text-muted leading-[1.6] font-body">{point.body}</p>
         </div>

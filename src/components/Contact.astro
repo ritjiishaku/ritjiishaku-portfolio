@@ -1,0 +1,446 @@
+<section id="contact" aria-label="Contact Ritji Ishaku">
+  <div class="contact-container">
+
+    <!-- Eyebrow -->
+    <p class="contact-eyebrow">Get In Touch</p>
+
+    <!-- Headline -->
+    <h2 class="contact-headline">
+      Let's talk about what<br />your clinic actually needs.
+    </h2>
+
+    <!-- Subtext -->
+    <p class="contact-subtext">
+      Fill in the form below and I will WhatsApp you
+      within 24 hours to schedule a free 20-minute call.
+      No forms of pressure. Just an honest conversation.
+    </p>
+
+    <!-- Two-column layout: Form left, WhatsApp right -->
+    <div class="contact-grid">
+
+      <!-- LEFT: Contact Form -->
+      <form
+        class="contact-form"
+        id="contact-form"
+      >
+        <!-- Name field -->
+        <div class="form-group">
+          <label for="name" class="form-label">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-input"
+            placeholder="Dr. Amaka Obi"
+            required
+            autocomplete="name"
+          />
+        </div>
+
+        <!-- WhatsApp / Email field -->
+        <div class="form-group">
+          <label for="contact-detail" class="form-label">
+            WhatsApp Number or Email
+          </label>
+          <input
+            type="text"
+            id="contact-detail"
+            name="contact-detail"
+            class="form-input"
+            placeholder="+234 800 000 0000 or you@clinic.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <!-- Service interest -->
+        <div class="form-group">
+          <label class="form-label">What do you need help with?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="service" value="missed-appointments" required />
+              <span>Reducing missed appointments</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="service" value="patient-intake" />
+              <span>Automating patient intake</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="service" value="whatsapp-chatbot" />
+              <span>Building a WhatsApp chatbot</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="service" value="mvp-build" />
+              <span>Building a digital health product</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="service" value="other" />
+              <span>Something else</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button
+          type="submit"
+          class="btn-submit"
+          id="submit-btn"
+        >
+          Send my details →
+        </button>
+
+        <!-- Reassurance below button -->
+        <p class="form-reassurance">
+          I respond within 24 hours via WhatsApp or email.
+          No spam. No sales calls without your permission.
+        </p>
+
+      </form>
+
+      <!-- RIGHT: WhatsApp Direct Option -->
+      <div class="whatsapp-panel">
+        <div class="whatsapp-card">
+          <p class="whatsapp-label">Prefer to message directly?</p>
+          <h3 class="whatsapp-headline">
+            Send me a WhatsApp message right now.
+          </h3>
+          <p class="whatsapp-body">
+            If you would rather skip the form and talk immediately,
+            tap the button below. A message is pre-written for you
+            — just hit send.
+           </p>
+           <a
+            href="https://wa.me/2349064957884?text=Hi%20Ritji%2C%20I%20found%20your%20website%20and%20I%27d%20like%20to%20discuss%20how%20AI%20automation%20can%20help%20my%20clinic."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-whatsapp"
+            aria-label="Send Ritji a WhatsApp message"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Message me on WhatsApp
+          </a>
+          <p class="whatsapp-note">
+            Typical response time: under 2 hours during
+            business hours (WAT)
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const btn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mvzdeljo', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        btn.textContent = '✓ Message sent — I will be in touch soon';
+        btn.style.background = '#1D9E75';
+        form.reset();
+      } else {
+        btn.textContent = 'Something went wrong — please WhatsApp me directly';
+        btn.style.background = '#D85A30';
+        btn.disabled = false;
+      }
+    } catch (error) {
+      btn.textContent = 'Something went wrong — please WhatsApp me directly';
+      btn.style.background = '#D85A30';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+<style>
+  section {
+    background: #F7F9FC;
+    padding: 80px 20px;
+  }
+
+  .contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .contact-eyebrow {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #388BFD;
+    margin-bottom: 16px;
+  }
+
+  .contact-headline {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #0A2540;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    max-width: 600px;
+  }
+
+  .contact-subtext {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 16px;
+    color: #64748B;
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 48px;
+  }
+
+  /* Two-column grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .contact-headline {
+      font-size: 28px;
+    }
+    section {
+      padding: 48px 20px;
+    }
+  }
+
+  /* Form styles */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-label {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0A2540;
+    letter-spacing: 0.01em;
+  }
+
+  .form-input {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 14px;
+    color: #0A2540;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    min-height: 44px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    width: 100%;
+  }
+
+  .form-input::placeholder {
+    color: #94A3B8;
+  }
+
+  .form-input:focus {
+    border-color: #388BFD;
+    box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.12);
+  }
+
+  /* Radio group */
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px 14px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    min-height: 44px;
+  }
+
+  .radio-option:hover {
+    border-color: #388BFD;
+    background: rgba(56, 139, 253, 0.03);
+  }
+
+  .radio-option input[type="radio"] {
+    accent-color: #388BFD;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .radio-option span {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 13px;
+    color: #0A2540;
+    line-height: 1.4;
+  }
+
+  .radio-option:has(input:checked) {
+    border-color: #388BFD;
+    background: rgba(56, 139, 253, 0.06);
+  }
+
+  /* Submit button */
+  .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background: #388BFD;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    min-height: 48px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease, transform 0.15s ease,
+                box-shadow 0.2s ease;
+    width: 100%;
+  }
+
+  .btn-submit:hover {
+    background: #2176e8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(56, 139, 253, 0.35);
+  }
+
+  .btn-submit:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  .btn-submit:focus-visible {
+    outline: 3px solid #B5D4F4;
+    outline-offset: 2px;
+  }
+
+  /* Reassurance text */
+  .form-reassurance {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 12px;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin-top: 4px;
+  }
+
+  /* WhatsApp panel */
+  .whatsapp-panel {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
+
+  .whatsapp-card {
+    background: #0A2540;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .whatsapp-label {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .whatsapp-headline {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.25;
+  }
+
+  .whatsapp-body {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.65;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #1D9E75;
+    color: #FFFFFF;
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    min-height: 48px;
+    transition: background 0.2s ease, transform 0.15s ease;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-whatsapp:hover {
+    background: #178a64;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(29, 158, 117, 0.35);
+  }
+
+  .btn-whatsapp:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  .btn-whatsapp:focus-visible {
+    outline: 3px solid rgba(29, 158, 117, 0.4);
+    outline-offset: 2px;
+  }
+
+  .whatsapp-note {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.3);
+    line-height: 1.5;
+  }
+</style>
