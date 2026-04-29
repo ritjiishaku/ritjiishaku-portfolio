@@ -36,32 +36,32 @@ const navLinks = [
   >
     <img src="/icons/icon-hamburger.svg" alt="" class="w-6 h-6" />
   </button>
-
-  <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="mobile-menu md:hidden">
-    <button
-      data-menu-close
-      aria-label="Close menu"
-      class="absolute top-6 right-5 text-white p-2"
-    >
-      <img src="/icons/icon-close.svg" alt="" class="w-6 h-6" />
-    </button>
-    
-    <div class="flex flex-col items-center">
-      {navLinks.map(link => (
-        <a href={link.href} class="mobile-link">{link.name}</a>
-      ))}
-      <a href="#contact" class="btn-nav-cta mt-6 w-full justify-center whitespace-nowrap mobile-link">Book a Call</a>
-    </div>
-  </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="mobile-menu md:hidden">
+  <button
+    data-menu-close
+    aria-label="Close menu"
+    class="absolute top-6 right-5 text-white p-2"
+  >
+    <img src="/icons/icon-close.svg" alt="" class="w-6 h-6" />
+  </button>
+  
+  <div class="flex flex-col items-center w-full px-8 max-w-sm">
+    {navLinks.map(link => (
+      <a href={link.href} class="mobile-link">{link.name}</a>
+    ))}
+    <a href="#contact" class="btn-nav-cta mt-8 mobile-cta-anim">Book a Call</a>
+  </div>
+</div>
 
 <script>
   const nav = document.getElementById('main-nav');
   const hamburger = document.querySelector('[data-menu-toggle]');
   const menu = document.getElementById('mobile-menu');
   const closeBtn = document.querySelector('[data-menu-close]');
-  const menuLinks = menu?.querySelectorAll('.mobile-link');
+  const menuLinks = menu?.querySelectorAll('a');
 
   const closeMenu = () => {
     menu?.classList.remove('is-open');
@@ -89,9 +89,13 @@ const navLinks = [
 
   // Mobile menu toggle
   hamburger?.addEventListener('click', () => {
-    menu?.classList.add('is-open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    if (menu?.classList.contains('is-open')) {
+      closeMenu();
+    } else {
+      menu?.classList.add('is-open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
   });
 
   closeBtn?.addEventListener('click', closeMenu);
