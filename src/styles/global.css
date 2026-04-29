@@ -115,7 +115,13 @@ h1, h2, h3 {
 }
 
 @media (max-width: 480px) {
-  .btn-primary { width: 100%; justify-content: center; }
+  .btn-primary { 
+    width: 100%; 
+    justify-content: center; 
+    text-align: center;
+    font-size: 13px;
+    padding: 14px 20px;
+  }
 }
 
 /* Chips */
